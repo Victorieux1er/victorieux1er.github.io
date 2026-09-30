@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Victorieux, Doudédji : création et édition numérique</title>
+<meta name="description" content="Victorieux est une entreprise béninoise de création et d'édition numérique. Elle porte Bénin Info Culture (BIC), OSER_Edu et l'École des récits.">
+<meta property="og:title" content="Victorieux, Doudédji">
+<meta property="og:description" content="Création et édition numérique, au service de la culture, de l'éducation et des langues du Bénin.">
+<meta property="og:image" content="https://doudedji.com/logo-victorieux-doudedji.jpg">
+<meta property="og:url" content="https://doudedji.com/">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E0D0B">
+<link rel="icon" type="image/png" href="icone-victorieux.png">
+<link rel="apple-touch-icon" href="icone-victorieux.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#0E0D0B; --noir-2:#17150F; --noir-3:#211E16; --ligne:#3A3325;
+  --or:#C9A970; --or-clair:#E4CC96; --or-sombre:#8E7445; --texte:#E9E4D8; --texte-2:#B3AA98;
+  --titre:'Cinzel', Georgia, serif; --signature:'Cormorant Garamond', Georgia, serif; --corps:'Montserrat', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--noir);color:var(--texte);font:400 1rem/1.7 var(--corps)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--or-clair)}
+:focus-visible{outline:2px solid var(--or-clair);outline-offset:3px}
+.conteneur{max-width:1080px;margin:0 auto;padding:0 1.4rem}
+h1,h2,h3{font-family:var(--titre);font-weight:600;letter-spacing:.06em;color:var(--or-clair);margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2.1rem);margin-bottom:.4rem}
+.sous-titre{font:italic 500 1.25rem var(--signature);color:var(--or);margin:0 0 2.2rem}
+.filet{display:flex;align-items:center;gap:.9rem;color:var(--or-sombre);font:600 .72rem var(--corps);letter-spacing:.3em;text-transform:uppercase;margin-bottom:1rem}
+.filet::before,.filet::after{content:"";height:1px;background:var(--ligne);flex:1;max-width:3rem}
+
+/* En-tête */
+.entete{position:sticky;top:0;z-index:10;background:rgba(14,13,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--ligne)}
+.entete .conteneur{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.8rem;padding-bottom:.8rem}
+.marque{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.marque img{width:40px;height:40px}
+.marque span{font:600 1.05rem var(--titre);letter-spacing:.14em;color:var(--or-clair)}
+.nav{display:flex;gap:1.4rem}
+.nav a{font:500 .9rem var(--corps);text-decoration:none;color:var(--texte-2)}
+.nav a:hover{color:var(--or-clair)}
+@media (max-width:760px){.nav{display:none}}
+
+/* Ouverture */
+.ouverture{padding-top:3.5rem;padding-bottom:4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:center}
+.ouverture img{border:1px solid var(--ligne);box-shadow:0 30px 60px -30px #000}
+.ouverture h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.05}
+.ouverture .signature{font:italic 500 1.6rem var(--signature);color:var(--or);margin:.4rem 0 1.4rem}
+.ouverture p{color:var(--texte-2);max-width:32rem}
+@media (max-width:760px){.ouverture{grid-template-columns:1fr;padding-top:2rem;gap:2rem}.ouverture img{max-width:320px;margin:0 auto}}
+
+.bouton{display:inline-flex;align-items:center;gap:.6rem;background:var(--or);color:var(--noir);font:600 .95rem var(--corps);letter-spacing:.04em;padding:.9rem 1.4rem;text-decoration:none;border:none;cursor:pointer}
+.bouton:hover{background:var(--or-clair)}
+.bouton.contour{background:none;color:var(--or-clair);box-shadow:inset 0 0 0 1px var(--or-sombre)}
+.bouton.contour:hover{box-shadow:inset 0 0 0 1px var(--or-clair)}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+
+/* Sections */
+section.bloc{padding:4.5rem 0;border-top:1px solid var(--ligne)}
+.grille{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+@media (max-width:900px){.grille{grid-template-columns:1fr}}
+.carte{background:var(--noir-2);border:1px solid var(--ligne);padding:1.8rem 1.6rem;display:flex;flex-direction:column}
+.carte h3{font-size:1.15rem;margin-bottom:.2rem}
+.carte .etat{font:600 .7rem var(--corps);letter-spacing:.2em;text-transform:uppercase;color:var(--or-sombre);margin-bottom:1rem}
+.carte p{color:var(--texte-2);margin:0 0 1rem;font-size:.95rem}
+.carte ul{margin:0 0 1rem;padding-left:1.1rem;color:var(--texte-2);font-size:.93rem}
+.carte li{margin-bottom:.3rem}
+.carte .lien{margin-top:auto;font:600 .9rem var(--corps);text-decoration:none;color:var(--or-clair)}
+.carte .lien:hover{text-decoration:underline}
+.carte.avenir{border-style:dashed;background:none}
+
+/* Histoire du nom */
+.nom{display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center}
+.nom .grand{font:italic 600 clamp(3rem,9vw,5.5rem)/1 var(--signature);color:var(--or)}
+.nom p{color:var(--texte-2);max-width:36rem;margin:0 0 1rem}
+@media (max-width:760px){.nom{grid-template-columns:1fr;gap:1rem}}
+
+/* Contact */
+.contact{text-align:center}
+.contact p{color:var(--texte-2);max-width:34rem;margin:0 auto 1.6rem}
+.contact .actions{justify-content:center}
+
+.pied{border-top:1px solid var(--ligne);padding:2rem 0 2.6rem;color:var(--texte-2);font-size:.85rem;text-align:center}
+.pied .signature{font:italic 500 1.1rem var(--signature);color:var(--or)}
+</style>
+</head>
+<body>
+
+<header class="entete">
+  <div class="conteneur">
+    <a class="marque" href="#haut" aria-label="Victorieux, accueil"><img src="icone-victorieux.png" alt=""><span>VICTORIEUX</span></a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="#produits">Produits</a>
+      <a href="#services">Services</a>
+      <a href="#nom">Notre nom</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+  <div class="conteneur ouverture">
+    <img src="logo-victorieux-doudedji.jpg" alt="Logo de Victorieux, Doudédji : création et édition numérique" width="1024" height="1024">
+    <div>
+      <p class="filet">Création &amp; édition numérique</p>
+      <h1>Victorieux</h1>
+      <p class="signature">Doudédji</p>
+      <p>Victorieux est une entreprise béninoise de création et d'édition numérique, basée à Ouidah. Elle conçoit, porte et fait grandir des produits numériques au service de la culture, de l'éducation et des langues du Bénin.</p>
+      <div class="actions">
+        <a class="bouton" href="#produits">Découvrir nos produits</a>
+        <a class="bouton contour" href="#contact">Nous contacter</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="bloc" id="produits" aria-labelledby="t-produits">
+    <div class="conteneur">
+      <p class="filet">Nos produits</p>
+      <h2 id="t-produits">Ce que nous créons</h2>
+      <p class="sous-titre">Des outils numériques nés au Bénin, pensés pour ceux qui les utilisent.</p>
+      <div class="grille">
+        <article class="carte">
+          <h3>Bénin Info Culture (BIC)</h3>
+          <p class="etat">En ligne</p>
+          <p>Le média culturel du Bénin, sur le web, à la radio et en vidéo. Une plateforme où journalistes et créateurs de tout le pays racontent les arts, les patrimoines, les langues et les spiritualités, avec un agenda culturel gratuit.</p>
+          <a class="lien" href="https://bicouidah.com" target="_blank" rel="noopener">Visiter bicouidah.com →</a>
+        </article>
+        <article class="carte">
+          <h3>OSER_Edu</h3>
+          <p class="etat">Bientôt</p>
+          <p>Un accompagnement pédagogique assisté par l'intelligence artificielle, pour aider les élèves d'Afrique francophone à réussir, en commençant par le Bénin et la préparation du BEPC et du BAC.</p>
+          <a class="lien" href="#contact">Être informé du lancement →</a>
+        </article>
+        <article class="carte avenir">
+          <h3>À venir</h3>
+          <p class="etat">En préparation</p>
+          <p>D'autres produits numériques sont en cours de conception, toujours autour de la culture, de l'éducation et de la souveraineté linguistique africaine.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="services" aria-labelledby="t-services">
+    <div class="conteneur">
+      <p class="filet">Nos services</p>
+      <h2 id="t-services">Ce que nous proposons</h2>
+      <p class="sous-titre">Tarifs communiqués sur demande.</p>
+      <div class="grille">
+        <article class="carte">
+          <h3>Régie publicitaire de BIC</h3>
+          <p class="etat">Annonceurs</p>
+          <p>Donnez de la visibilité à votre événement ou à votre marque auprès du public culturel de BIC.</p>
+          <ul><li>La une de la page d'accueil</li><li>Votre affiche sur les articles les plus lus</li><li>Partenariats et contenus sur mesure</li></ul>
+          <a class="lien" href="#contact">Demander les tarifs →</a>
+        </article>
+        <article class="carte">
+          <h3>L'École des récits</h3>
+          <p class="etat">Formations</p>
+          <p>Des formations courtes, pratiques et certifiantes pour journalistes et créateurs de contenu. Elles complètent les écoles de journalisme sans les remplacer.</p>
+          <ul><li>Un socle obligatoire : journalisme et création de contenu culturel</li><li>Cinq parcours : écriture, radio et audio, vidéo au téléphone, éthique et vérification, langues nationales</li><li>Trois niveaux : Initié, Confirmé, Expert</li></ul>
+          <p>Les certifications sont délivrées par BIC. Les inscriptions et l'organisation sont assurées par Victorieux.</p>
+          <a class="lien" href="#contact">S'inscrire ou se renseigner →</a>
+        </article>
+        <article class="carte">
+          <h3>Communication culturelle</h3>
+          <p class="etat">Festivals et événements</p>
+          <p>Un accompagnement pour faire connaître vos événements culturels : stratégie, textes, visuels et diffusion sur le web et les réseaux sociaux.</p>
+          <a class="lien" href="#contact">Parler de votre projet →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="nom" aria-labelledby="t-nom">
+    <div class="conteneur nom">
+      <p class="grand" aria-hidden="true">Doudédji</p>
+      <div>
+        <p class="filet">Notre nom</p>
+        <h2 id="t-nom">Victorieux, traduction de Doudédji</h2>
+        <p>Victorieux porte en français le sens de Doudédji, le nom de son fondateur, Tognon Doudédji Fatchina, journaliste culturel depuis plus de dix-sept ans.</p>
+        <p>Le nom dit l'ambition : que les produits nés au Bénin, dans nos langues et pour nos publics, réussissent et durent.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc contact" id="contact" aria-labelledby="t-contact">
+    <div class="conteneur">
+      <p class="filet" style="justify-content:center">Contact</p>
+      <h2 id="t-contact">Parlons de votre projet</h2>
+      <p class="sous-titre">Publicité, formations, communication culturelle : écrivez-nous directement sur WhatsApp.</p>
+      <div class="actions">
+        <a class="bouton" href="https://wa.me/2290195416879?text=Bonjour%20Victorieux%2C%20je%20viens%20de%20votre%20site%20doudedji.com%20et%20je%20souhaite%20des%20informations." target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <a class="bouton contour" href="https://www.facebook.com/share/1EgpHAo5cW/" target="_blank" rel="noopener">Page Facebook</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <p class="signature">Victorieux, Doudédji</p>
+  <p>Création &amp; édition numérique. Ouidah, Bénin.</p>
+</footer>
+</body>
+</html>
